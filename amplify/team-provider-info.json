@@ -1,0 +1,15 @@
+{
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-visualsignaldemo-test-131502-authRole",
+            "UnauthRoleArn": "arn:aws:iam::186799193430:role/amplify-visualsignaldemo-test-131502-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::186799193430:role/amplify-visualsignaldemo-test-131502-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-visualsignaldemo-test-131502-deployment",
+            "UnauthRoleName": "amplify-visualsignaldemo-test-131502-unauthRole",
+            "StackName": "amplify-visualsignaldemo-test-131502",
+            "StackId": "arn:aws:cloudformation:us-east-1:186799193430:stack/amplify-visualsignaldemo-test-131502/69e756e0-2b32-11eb-b79d-0a8a0480d74d",
+            "AmplifyAppId": "d16k5364xuj3zy"
+        }
+    }
+}

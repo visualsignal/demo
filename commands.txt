@@ -1,3 +1,15 @@
 vue create visualsignal-demo
 -> Configure, we select our preset
 
+cd visualsignal-demo
+amplify init
+-> Please tell us about your project
+? Enter a name for the project visualsignaldemo
+? Enter a name for the environment test
+? Choose your default editor: None
+? Choose the type of app that you're building javascript
+? What javascript framework are you using vue
+? Source Directory Path:  src
+? Distribution Directory Path: dist
+? Build Command:  npm run-script build
+? Start Command: npm run-script serve
