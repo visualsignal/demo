@@ -6,14 +6,14 @@
     <p>Enter a display name and room name to begin.</p>
     <p>To connect with someone, have the come to the same url as you're on now and enter a matching
       room name</p>
-    <form @submit.prevent="joinRoom"  class="form">
+    <form @submit.prevent="joinRoom(form)" class="form">
       <div>
         <label for="displayName">Display Name</label>
-        <input type="text" id="displayName" v-model="displayName">
+        <input type="text" id="displayName" v-model="form.displayName">
       </div>
       <div>
         <label for="roomName">Room Name</label>
-        <input type="text" id="roomName" v-model="roomName">
+        <input type="text" id="roomName" v-model="form.roomName">
       </div>
       <button type="submit">Join Room</button>
     </form>
@@ -21,20 +21,20 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import { mapActions } from 'vuex';
 
 export default {
-  name: 'Home',
+  name: 'home',
   data() {
     return {
-      displayName: '',
-      roomName: '',
+      form: {
+        displayName: '',
+        roomName: '',
+      },
     };
   },
   methods: {
-    joinRoom() {
-      console.log('connect to conductor and join room');
-    },
+    ...mapActions(['joinRoom']),
   },
 };
 </script>
