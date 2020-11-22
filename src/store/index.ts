@@ -10,8 +10,9 @@ interface JoinRoomRequest {
 
 export default new Vuex.Store({
   state: {
-    displayName: '',
-    roomName: '',
+    displayName: null,
+    roomName: null,
+    token: null,
   },
   mutations: {
   },
