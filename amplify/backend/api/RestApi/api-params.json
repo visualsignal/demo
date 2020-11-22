@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/auth",
+            "lambdaFunction": "getAuthToken",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "RestApi",
+    "apiName": "RestApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "getAuthToken"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-visualsignaldemo-test-131502-authRole",
+        "unAuthRoleName": "amplify-visualsignaldemo-test-131502-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "getAuthToken",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

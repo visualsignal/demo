@@ -13,3 +13,35 @@ amplify init
 ? Distribution Directory Path: dist
 ? Build Command:  npm run-script build
 ? Start Command: npm run-script serve
+
+╭─ ~/Sites/visualsignal-demo on demo !1                                                                                                                                                                         took 1m 11s at 15:18:59
+╰─❯ amplify add api
+? Please select from one of the below mentioned services: REST
+? Provide a friendly name for your resource to be used as a label for this category in the project: RestApi
+? Provide a path (e.g., /book/{isbn}): /auth
+? Choose a Lambda source Create a new Lambda function
+? Provide a friendly name for your resource to be used as a label for this category in the project: getAuthToken
+? Provide the AWS Lambda function name: getAuthToken
+? Choose the runtime that you want to use: NodeJS
+? Choose the function template that you want to use: Hello World
+? Do you want to access other resources in this project from your Lambda function? No
+? Do you want to invoke this function on a recurring schedule? No
+? Do you want to configure Lambda layers for this function? No
+? Do you want to edit the local lambda function now? No
+Successfully added resource getAuthToken locally.
+
+Next steps:
+Check out sample function code generated in <project-dir>/amplify/backend/function/getAuthToken/src
+"amplify function build" builds all of your functions currently in the project
+"amplify mock function <functionName>" runs your function locally
+"amplify push" builds all of your local backend resources and provisions them in the cloud
+"amplify publish" builds all of your local backend and front-end resources (if you added hosting category) and provisions them in the cloud
+Succesfully added the Lambda function locally
+? Restrict API access No
+? Do you want to add another path? No
+Successfully added resource RestApi locally
+
+Some next steps:
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
+
