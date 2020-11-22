@@ -15,6 +15,9 @@ const routes: Array<RouteConfig> = [
     path: '/room/:id',
     name: 'room',
     component: Room,
+    meta: {
+      requiresAuth: true,
+    },
   },
 ];
 
@@ -22,6 +25,19 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
+});
+
+router.beforeResolve(async (to, from, next) => {
+  if (to.matched.some((record) => record.meta.requiresAuth)) {
+    const token = localStorage.getItem('token');
+    if (to.name === 'room' && !token) {
+      return next({
+        name: 'home',
+      });
+    }
+    return next();
+  }
+  return next();
 });
 
 export default router;

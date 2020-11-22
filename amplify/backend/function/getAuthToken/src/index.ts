@@ -16,7 +16,6 @@ export const handler = async (event: any): Promise<any> => {
     }
   })
 
-
   let body, displayName, room
   try {
     body = JSON.parse(event.body)

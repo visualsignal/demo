@@ -6,7 +6,7 @@
     <p>Enter a display name and room name to begin.</p>
     <p>To connect with someone, have the come to the same url as you're on now and enter a matching
       room name</p>
-    <form @submit.prevent="joinRoom(form)" class="form">
+    <form @submit.prevent="submitForm" class="form">
       <div>
         <label for="displayName">Display Name</label>
         <input type="text" id="displayName" v-model="form.displayName">
@@ -35,6 +35,15 @@ export default {
   },
   methods: {
     ...mapActions(['joinRoom']),
+    submitForm() {
+      this.joinRoom(this.form).then(() => {
+        this.$router.push({
+          name: 'room',
+          params: { id: this.form.roomName },
+        })
+          .catch((e) => console.error(e));
+      });
+    },
   },
 };
 </script>
