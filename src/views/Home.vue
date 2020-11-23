@@ -21,31 +21,31 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
 export default {
   name: 'home',
-  data() {
+  data () {
     return {
       form: {
         displayName: '',
         roomName: '',
       },
-    };
+    }
   },
   methods: {
     ...mapActions(['joinRoom']),
-    submitForm() {
+    submitForm () {
       this.joinRoom(this.form).then(() => {
         this.$router.push({
           name: 'room',
           params: { id: this.form.roomName },
         })
-          .catch((e) => console.error(e));
-      });
+          .catch((e) => console.error(e))
+      })
     },
   },
-};
+}
 </script>
 
 <style lang="scss">

@@ -41,7 +41,7 @@ export const handler = async (event: any): Promise<any> => {
       handle,
       permissions: {
         audio: true,
-        video: true
+        video: true,
       },
       appData: {
         displayName
