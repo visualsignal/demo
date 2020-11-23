@@ -1,8 +1,8 @@
 <template>
   <div class="about">
     <h1>Welcome {{ user.displayName }}</h1>
-    <div>
-      <div v-for="u in connectedUsers" v-bind:key="u.marker.toISOString()">
+    <div class="grid">
+      <div v-for="u in connectedUsers" v-bind:key="u.marker.toISOString()" class="user">
         <video :srcObject.prop="u.camera" autoplay muted></video>
         <audio :srcObject.prop="u.audio" v-if="u.audio"></audio>
         <p style="text-align: center" v-html="u.displayName"></p>
@@ -85,3 +85,29 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  grid-auto-rows: 1fr;
+
+  &::before {
+    content: '';
+    width: 0;
+    padding-bottom: 100%;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+
+  & > *:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+
+  & > * {
+    background: rgba(0,0,0,0.1);
+    border: 1px white solid;
+  }
+}
+</style>
