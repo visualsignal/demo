@@ -26,6 +26,7 @@ export default {
     this.sdk = new VSSDK(this.user.token)
     this.sdk.av.connection.on('authSuccess', async () => {
       await this.sdk.av.initialize()
+      this.setupListeners()
       await this.sdk.av.consume((stream, user, appData) => {
         const { kind } = stream.getTracks()[0]
         console.log('Got a stream', stream, kind, user, appData)
@@ -82,6 +83,9 @@ export default {
         ...userInfo,
       })
     },
+    setupListeners () {
+
+    }
   },
 }
 </script>
