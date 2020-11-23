@@ -84,8 +84,9 @@ export default {
       })
     },
     setupListeners () {
-
-    }
+      this.sdk.av.connection.on('userJoin', ({ displayName }) => this.$toasted.success(`${displayName} joined the room`))
+      this.sdk.av.connection.on('userLeave', ({ displayName }) => this.$toasted.success(`${displayName} left the room`))
+    },
   },
 }
 </script>
