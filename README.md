@@ -20,7 +20,7 @@ function is located in `amplify/backend/function/getAuthToken/src/index.ts`, it 
 from the Home component and makes a request to the Authentication Service to generate a token which the front end will
 use to connect via the SDK.
 
-> :warning: When you deploy the backend using `amplify publish` you will need to manually add VS_BASE_URL and VS_API_KEY
+> :warning: When you deploy the backend using `amplify push` you will need to manually add VS_BASE_URL and VS_API_KEY
 > [environment variables in the AWS console](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)
 
 ## Project setup
