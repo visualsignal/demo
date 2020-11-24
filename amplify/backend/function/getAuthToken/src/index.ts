@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 
 export const handler = async (event: any): Promise<any> => {
   console.debug('received new request', JSON.stringify(event, null, 2))
-  const VS_BASE_URL = process.env.VS_BASE_URL
+  const VS_BASE_URL = process.env.VS_BASE_URL || 'prod.visualsignal.io'
   const API_BASE_URL = `https://auth.${VS_BASE_URL}`
   const API_KEY = process.env.VS_API_KEY
 

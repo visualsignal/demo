@@ -20,8 +20,9 @@ function is located in `amplify/backend/function/getAuthToken/src/index.ts`, it 
 from the Home component and makes a request to the Authentication Service to generate a token which the front end will
 use to connect via the SDK.
 
-> :warning: When you deploy the backend using `amplify push` you will need to manually add VS_BASE_URL and VS_API_KEY
-> [environment variables in the AWS console](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)
+> :warning: When you deploy the backend using `amplify push` you will need to manually add the VS_API_KEY
+> [environment variable in the AWS console](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html).
+> You can get your API key from your VisualSignal account dashboard.
 
 ## Project setup
 ```
